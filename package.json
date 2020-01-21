@@ -1,0 +1,38 @@
+{
+  "name": "game_backend",
+  "version": "1.0.0",
+  "description": "game backend para aplicaciones moviles",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pcusi/game-backend.git"
+  },
+  "keywords": [
+    "backend",
+    "game",
+    "flutter",
+    "design"
+  ],
+  "author": "Piero Abraham Cusi Ruiz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pcusi/game-backend/issues"
+  },
+  "homepage": "https://github.com/pcusi/game-backend#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "connect-multiparty": "^2.2.0",
+    "express": "^4.17.1",
+    "jwt-simple": "^0.5.6",
+    "moment": "^2.24.0",
+    "mongoose": "^5.8.9"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
