@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pcusi/game-backend.git"
+    "url": "git+github.com/pcusi/game-backend.git"
   },
   "keywords": [
     "backend",
