@@ -43,7 +43,11 @@ const _userCharacter = mongo.Schema({
     character_exp: {
         type: Number,
         default: 0
-    }
+    },
+    character_lvl: {
+        type: Number,
+        default: 1
+    },
 });
 
 module.exports = mongo.model('UserChar', _userCharacter);

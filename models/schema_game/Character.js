@@ -17,10 +17,6 @@ const _characterSchema = Schema({
         type: Number,
         default: 30
     },
-    character_lvl: {
-        type: Number,
-        default: 1
-    },
     character_image: {
         type: String,
         default: 'null'

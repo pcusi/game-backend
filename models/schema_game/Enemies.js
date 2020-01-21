@@ -25,6 +25,10 @@ const _enemySchema = new mongo.Schema({
         type: String,
         unique: true
     },
+    enemy_exp: {
+        type: Number,
+        default: 0,
+    }
 });
 
 //Export the model
