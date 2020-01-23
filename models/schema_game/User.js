@@ -6,7 +6,10 @@ const _userSchema = mongo.Schema({
         type: String,
         unique: true
     },
-    password: String,
+    password: {
+        type: String,
+        required: true
+    },
     status: {
         type: Boolean,
         default: true
@@ -15,6 +18,10 @@ const _userSchema = mongo.Schema({
         type: String,
         unique: true
     },
+    image: {
+        type: String,
+        default: 'null'
+    }
 });
 
 module.exports = mongo.model('User', _userSchema);

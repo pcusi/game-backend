@@ -16,33 +16,6 @@ const _userCharacter = mongo.Schema({
     created_at: {
         type: String,
     },
-    items: {
-        helmet: {
-            type: mongo.Schema.ObjectId
-        },
-        chest: {
-            type: mongo.Schema.ObjectId
-        },
-        gloves: {
-            type: mongo.Schema.ObjectId
-        },
-        legs: {
-            type: mongo.Schema.ObjectId
-        },
-        ring_one: {
-            type: mongo.Schema.ObjectId
-        },
-        ring_two: {
-            type: mongo.Schema.ObjectId
-        },
-        shield: {
-            type: mongo.Schema.ObjectId
-        },
-        custom: {
-            type: mongo.Schema.ObjectId
-        }
-
-    },
     character_exp: {
         type: Number,
         default: 0
@@ -51,6 +24,10 @@ const _userCharacter = mongo.Schema({
         type: Number,
         default: 1
     },
+    character_abilities_point: {
+        type: Number,
+        default: 0
+    }
 });
 
 module.exports = mongo.model('UserChar', _userCharacter);

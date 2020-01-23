@@ -12,6 +12,9 @@ const _itemSchema = mongo.Schema({
     item_lvl: {
         type: Number
     },
+    item_class: {
+        type: String,
+    },
     item_dmg: {
         type: Number
     },
