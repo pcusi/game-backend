@@ -2,11 +2,11 @@ const mongo = require('mongoose');
 
 const _userCharacter = mongo.Schema({
     user: {
-        type: Schema.ObjectId,
+        type: mongo.Schema.ObjectId,
         ref: 'User'
     },
     character: {
-        type: Schema.ObjectId,
+        type: mongo.Schema.ObjectId,
         ref: 'Character'
     },
     nick: {
@@ -18,25 +18,25 @@ const _userCharacter = mongo.Schema({
     },
     items: {
         helmet: {
-            type: Schema.ObjectId
+            type: mongo.Schema.ObjectId
         },
         chest: {
-            type: Schema.ObjectId
+            type: mongo.Schema.ObjectId
         },
         gloves: {
-            type: Schema.ObjectId
+            type: mongo.Schema.ObjectId
         },
         legs: {
-            type: Schema.ObjectId
+            type: mongo.Schema.ObjectId
         },
         ring_one: {
-            type: Schema.ObjectId
+            type: mongo.Schema.ObjectId
         },
         ring_two: {
-            type: Schema.ObjectId
+            type: mongo.Schema.ObjectId
         },
         shield: {
-            type: Schema.ObjectId
+            type: mongo.Schema.ObjectId
         },
 
     },
