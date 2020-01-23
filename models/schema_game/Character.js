@@ -35,6 +35,10 @@ const _characterSchema = mongo.Schema({
     },
     character_speed_mov: {
         type: Number,
+    },
+    character_weapon: {
+        type: String,
+        required: true,
     }
 });
 
