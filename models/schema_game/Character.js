@@ -1,7 +1,6 @@
 const mongo = require('mongoose');
-const Schema = mongo.Schema;
 
-const _characterSchema = Schema({
+const _characterSchema = mongo.Schema({
     character_name: {
         type: String,
         unique: true
