@@ -12,16 +12,22 @@ const _itemSchema = mongo.Schema({
     item_lvl: {
         type: Number
     },
-    item_damage: {
+    item_dmg: {
         type: Number
     },
     item_speed: {
         type: Number
     },
-    item_durability: {
+    item_dbty: {
         type: Number,
         default: 100
-    }
+    },
+    item_def: {
+        type: Number,
+    },
+    item_effect: {
+        type: String,
+    },
 });
 
 module.exports = mongo.model('Item', _itemSchema);

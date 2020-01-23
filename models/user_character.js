@@ -38,6 +38,9 @@ const _userCharacter = mongo.Schema({
         shield: {
             type: mongo.Schema.ObjectId
         },
+        custom: {
+            type: mongo.Schema.ObjectId
+        }
 
     },
     character_exp: {
