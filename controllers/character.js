@@ -2,6 +2,7 @@ const Character = require('../models/schema_game/Character');
 const UserChar = require('../models/user_character');
 const CharSkill = require('../models/user_character_skills');
 const moment = require('moment');
+const jwt = require('../middlewares/jwt');
 
 async function _createCharacter(req, res) {
     let character = new Character();
@@ -70,7 +71,32 @@ async function _buildUserCharacter(req, res) {
     }));
 }
 
+async function _userCharacterLogged(req, res) {
+
+    let {
+        user
+    } = req.headers.authorization;
+    user = req.user;
+
+    if (!user) {
+        console.log(req.user);
+    }
+
+    UserChar.findOne({
+        'user': user
+    }).then(user_character => {
+        if (user_character) {
+            return res.status(200).send({
+                user_character_token: jwt.characterToken(user_character)
+            });
+        }
+    }).catch(() => res.status(500).send({
+        message: 'ERROR'
+    }));
+}
+
 module.exports = {
     _createCharacter,
-    _buildUserCharacter
+    _buildUserCharacter,
+    _userCharacterLogged
 }

@@ -9,6 +9,9 @@ const _itemSchema = mongo.Schema({
         type: String,
         default: 'null'
     },
+    item_type: {
+        type: String,
+    },
     item_lvl: {
         type: Number
     },

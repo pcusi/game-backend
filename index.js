@@ -12,7 +12,9 @@ const _userRoute = require('./routes/user.routes');
 const _characterRoute = require('./routes/character.routes');
 const _skillRoute = require('./routes/skill.routes');
 const _itemRoute = require('./routes/item.routes');
-app.use('/api', [_userRoute, _characterRoute, _skillRoute, _itemRoute])
+const _enemyRoute = require('./routes/enemy.routes');
+const _worldRoute = require('./routes/world.routes');
+app.use('/api', [_userRoute, _characterRoute, _skillRoute, _itemRoute, _enemyRoute, _worldRoute]);
 
 const mongo = require('mongoose');
 mongo.Promise = global.Promise;

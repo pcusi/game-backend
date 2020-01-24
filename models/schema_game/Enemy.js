@@ -3,7 +3,7 @@ const mongo = require('mongoose');
 const _enemySchema = new mongo.Schema({
     enemy_type: {
         type: String,
-        unique: true
+        required: true
     },
     enemy_hp: {
         type: Number,
@@ -28,6 +28,15 @@ const _enemySchema = new mongo.Schema({
     enemy_exp: {
         type: Number,
         default: 0,
+    },
+    enemy_dmg: {
+        type: Number
+    },
+    enemy_wiz_dmg: {
+        type: Number
+    },
+    enemy_def: {
+        type: Number
     }
 });
 

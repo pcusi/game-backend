@@ -11,6 +11,7 @@ async function _createItem(req, res) {
         item_speed,
         item_def,
         item_effect,
+        item_type,
     } = req.body;
 
     item.item_name = item_name;
@@ -20,6 +21,7 @@ async function _createItem(req, res) {
     item.item_speed = item_speed;
     item.item_def = item_def;
     item.item_effect = item_effect;
+    item.item_type = item_type;
 
     await item.save().then(item => {
         res.status(200).send({

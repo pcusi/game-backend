@@ -16,3 +16,18 @@ exports.createToken = function (user) {
         })
     }
 }
+
+exports.characterToken = function (user_character) {
+    var payload = {
+        sub: user_character._id,
+        iat: moment().unix(),
+        exp: moment().add(30, 'days').unix()
+    }
+    try {
+        return jwt.encode(payload, secret);
+    } catch {
+        return status(500).send({
+            message: 'El token del personaje logueado no es válido!'
+        })
+    }
+}
