@@ -2,7 +2,6 @@ const mongo = require('mongoose');
 const _skillSchema = mongo.Schema({
     skill_name: {
         type: String,
-        unique: true
     },
     skill_lvl: {
         type: Number

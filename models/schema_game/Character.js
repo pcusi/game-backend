@@ -14,7 +14,6 @@ const _characterSchema = mongo.Schema({
     },
     character_type: {
         type: String,
-        unique: true
     },
     character_hp: {
         type: Number,
@@ -23,6 +22,12 @@ const _characterSchema = mongo.Schema({
     character_mp: {
         type: Number,
         default: 30
+    },
+    character_dmg: {
+        type: Number
+    },
+    character_wiz_dmg: {
+        type: Number
     },
     character_str: {
         type: Number,
@@ -34,6 +39,9 @@ const _characterSchema = mongo.Schema({
         type: Number
     },
     character_speed_mov: {
+        type: Number,
+    },
+    character_precision: {
         type: Number,
     },
     character_weapon: {

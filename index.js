@@ -9,7 +9,10 @@ app.use(_parser.urlencoded({
 app.use(_parser.json());
 
 const _userRoute = require('./routes/user.routes');
-app.use('/api', [_userRoute])
+const _characterRoute = require('./routes/character.routes');
+const _skillRoute = require('./routes/skill.routes');
+const _itemRoute = require('./routes/item.routes');
+app.use('/api', [_userRoute, _characterRoute, _skillRoute, _itemRoute])
 
 const mongo = require('mongoose');
 mongo.Promise = global.Promise;
@@ -17,9 +20,8 @@ mongo.Promise = global.Promise;
 const _port = 4500;
 
 mongo.connect('mongodb://localhost:27017/game-backend', {
-    useNewUrlParser: true,
-    useCreateIndex: true,
-    useUnifiedTopology: true,
-}, () => console.log('MongoDB Connected'), 
-app.listen(_port, () => console.log(`http://localhost:${_port}/api`)));
-
+        useNewUrlParser: true,
+        useCreateIndex: true,
+        useUnifiedTopology: true,
+    }, () => console.log('MongoDB Connected'),
+    app.listen(_port, () => console.log(`http://localhost:${_port}/api`)));

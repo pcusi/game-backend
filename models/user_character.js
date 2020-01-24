@@ -26,7 +26,7 @@ const _userCharacter = mongo.Schema({
     },
     character_abilities_point: {
         type: Number,
-        default: 0
+        default: 1
     }
 });
 

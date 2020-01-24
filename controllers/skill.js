@@ -1,4 +1,5 @@
 const Skill = require('../models/schema_game/Skill');
+const Character = require('../models/schema_game/Character');
 
 
 async function _createSkill(req, res) {
@@ -26,6 +27,56 @@ async function _createSkill(req, res) {
     });
 }
 
+function _getWarriorCharacterSkill(req, res) {
+
+    Character.findOne({
+        'character_type': 'Guerrero',
+        'character_type': 'Guerrera',
+    }).then(character => {
+        if (character) {
+            Skill.find({
+                'character': {
+                    $in: [character._id]
+                }
+            }).then(skill => {
+                return res.status(200).send({
+                    skill
+                });
+            });
+        } else {
+            return res.status(401).send({
+                message: 'no existe esa clase'
+            });
+        }
+    });
+
+}
+
+function _getWizardCharacterSkill(req, res) {
+    Character.findOne({
+        'character_type': 'Mago',
+        'character_type': 'Maga',
+    }).then(character => {
+        if (character) {
+            Skill.find({
+                'character': {
+                    $in: [character._id]
+                }
+            }).then(skill => {
+                return res.status(200).send({
+                    skill
+                });
+            });
+        } else {
+            return res.status(401).send({
+                message: 'no existe esa clase'
+            });
+        }
+    });
+}
+
 module.exports = {
-    _createSkill
+    _createSkill,
+    _getWarriorCharacterSkill,
+    _getWizardCharacterSkill
 }
